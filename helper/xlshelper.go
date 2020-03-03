@@ -166,3 +166,5 @@ func toFloat(data *xlsx.Cell) float64 {
 	result, _ := strconv.ParseFloat(data.String(), 64)
 	return result
 }
+
+//Maret2020
