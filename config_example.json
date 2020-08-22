@@ -1,0 +1,11 @@
+{
+  "appName": "Learn-XLSX",
+
+  "db" : {
+    "user" : "root",
+    "password" : "",
+    "port" : 3306,
+    "host" : "localhost",
+    "name" : "learn_xlsx"
+  }
+}

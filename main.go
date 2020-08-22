@@ -1,36 +1,18 @@
 package main
 
 import (
-	"fmt"
-	"log"
-	"os"
 	"sync"
 
+	"github.com/cecepsprd/go-xlsx-writer/config"
 	"github.com/cecepsprd/go-xlsx-writer/helper"
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/jmoiron/sqlx"
-	"github.com/subosito/gotenv"
 	"github.com/tealeg/xlsx"
 )
 
 func main() {
-	err := gotenv.Load(".env")
-	if err != nil {
-		log.Fatalln(err)
-	}
 
-	db_user := os.Getenv("DB_USERNAME")
-	db_password := os.Getenv("DB_PASSWORD")
-	db_host := os.Getenv("DB_HOST")
-
-	fmt.Println(db_password)
-	db, err := sqlx.Connect("mysql", db_user+":"+db_password+"@("+db_host+":3306)/LMD")
-	if err != nil {
-		log.Fatalln(err)
-	}
+	db := config.DBConnect()
 	defer db.Close()
-
-	// helper.SelectAll()
 
 	xlsFile, _ := xlsx.OpenFile("./lmd.xlsx")
 
