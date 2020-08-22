@@ -6,11 +6,11 @@ import (
 	"os"
 	"sync"
 
+	"github.com/cecepsprd/go-xlsx-writer/helper"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jmoiron/sqlx"
 	"github.com/subosito/gotenv"
 	"github.com/tealeg/xlsx"
-	"gitlab.twprisma.com/helper_db_lmd/helper"
 )
 
 func main() {

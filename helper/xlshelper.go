@@ -6,9 +6,9 @@ import (
 	"strconv"
 	"sync"
 
+	"github.com/cecepsprd/go-xlsx-writer/model"
 	"github.com/jmoiron/sqlx"
 	"github.com/tealeg/xlsx"
-	"gitlab.twprisma.com/helper_db_lmd/model"
 )
 
 func InsertIntoUsergroup(rows []*xlsx.Row, wg *sync.WaitGroup, db *sqlx.DB) {
